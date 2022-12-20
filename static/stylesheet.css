@@ -13,6 +13,10 @@ body {
     align-items: center;
 }
 
+#game {
+    width: 50%;
+}
+
 h1 {
     color: black;
     text-align: center;
@@ -22,6 +26,14 @@ h1 {
     padding: 5px;
     border-radius: 5px;
     background-color: rgb(13, 77, 197);
+}
+
+#board-and-words {
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .row {
@@ -44,6 +56,10 @@ h1 {
     border-color: #000000;
     border-radius: 5%;
     margin: 3px;
+}
+
+#found-words-section{
+    text-align: left;
 }
 
 #guess-form {

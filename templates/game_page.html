@@ -24,20 +24,27 @@
             <td id="games-played">{{games_played}}</td>
         </tr>
     </table>
-    <section id="board">
-        {% for row in game_board %}
-        <section class="row">
-            {% for peice in row %}
-            <div class="letter">{{peice}}</div>
+    <section id="board-and-words">
+        <section id="board">
+            {% for row in game_board %}
+            <section class="row">
+                {% for peice in row %}
+                <div class="letter">{{peice}}</div>
+                {% endfor %}
+            </section>
             {% endfor %}
         </section>
-        {% endfor %}
+        <section id="found-words-section">
+            <h3>Found Words</h3>
+            <ul id="found-words-list"></ul>
+        </section>
     </section>
+
 
     <form action="" id="guess-form">
         <label for="guess">Guess:</label>
         <input type="text" placeholder="Guess" name="guess" id="guess">
-        <button type="submit" class="submit-guess">Place Guess</button>
+        <button type="submit" id="submit-guess">Place Guess</button>
         <p class="guess-message"></p>
     </form>
 </section>
