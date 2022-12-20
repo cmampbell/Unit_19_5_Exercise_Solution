@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Game on!{% endblock %}
+
+{% block content %}
+<h1>Boggle Game!</h1>
+<section id="rules">
+    <h3>Rules:</h3>
+    <p>The goal of the game is to get the highest point total. To gain points, create words from the letters in the
+        grid.</p>
+    <input type="button" value="Start Game!" name="start-button" id="start-button">
+</section>
+
+<section id="game">
+    <table id="scores">
+        <thead>
+            <td>Score</td>
+            <td>High Score</td>
+            <td>Games Played</td>
+        </thead>
+        <tr>
+            <td id="current-score">0</td>
+            <td id="high-score">{{high_score}}</td>
+            <td id="games-played">{{games_played}}</td>
+        </tr>
+    </table>
+    <section id="board">
+        {% for row in game_board %}
+        <section class="row">
+            {% for peice in row %}
+            <div class="letter">{{peice}}</div>
+            {% endfor %}
+        </section>
+        {% endfor %}
+    </section>
+
+    <form action="" id="guess-form">
+        <label for="guess">Guess:</label>
+        <input type="text" placeholder="Guess" name="guess" id="guess">
+        <button type="submit" class="submit-guess">Place Guess</button>
+        <p class="guess-message"></p>
+    </form>
+</section>
+
+<section id="end-game">
+    <form action="">
+        <p>Game over!</p>
+        <input type="submit" value="Play again?" id="play-again">
+    </form>
+</section>
+
+{% endblock %}
